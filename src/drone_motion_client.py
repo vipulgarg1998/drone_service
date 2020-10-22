@@ -15,10 +15,10 @@ def moveDrone():
         print("Service call failed: %s"%e)
         return False
 
-# if __name__ == "__main__":
-rospy.init_node("drone_motion_client")
-print("Drone Client")
-if(moveDrone()):
-    print("Objected Accomplished")
-else:
-    print("Objective Failed")
+if __name__ == "__main__":
+    rospy.init_node("drone_motion_client")
+    print("Drone Client")
+    if(moveDrone()):
+        print("Objected Accomplished")
+    else:
+        print("Objective Failed")

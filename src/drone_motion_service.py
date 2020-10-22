@@ -24,7 +24,7 @@ def moveDrone(req):
     return Empty()
 
 def moveDroneServer():
-    rospy.init_node('drone_service')
+    rospy.init_node('drone_motion_service')
     s = rospy.Service('/my_service', MyService, moveDrone)
     print("Moving Drone")
     rospy.spin()

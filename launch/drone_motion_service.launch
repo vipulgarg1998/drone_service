@@ -1,0 +1,6 @@
+<launch>
+
+  <!-- Launch Drone Motion Service  -->
+  <node name="drone_motion_service.py" pkg="drone_service" type="drone_motion_service.py"/>
+
+</launch>
