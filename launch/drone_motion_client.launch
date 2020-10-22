@@ -1,6 +1,6 @@
 <launch>
 
   <!-- Launch Drone Motion Client  -->
-  <node name="drone_motion_client.py" pkg="drone_service" type="drone_motion_client.py"/>
+  <node name="drone_motion_client.py" pkg="drone_service" type="drone_motion_client.py" output="screen"/>
 
 </launch>

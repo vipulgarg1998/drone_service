@@ -6,19 +6,20 @@ from drone_service.srv import *
 from std_msgs.msg import Empty
 
 def moveDrone():
-    rospy.wait_for_service('/my_service')
+    rospy.wait_for_service('my_service')
     try:
-        rosClient = rospy.ServiceProxy('/my_service', MyService)
+        print("callback")
+        rosClient = rospy.ServiceProxy('my_service', MyService)
         response = rosClient()
         return True
     except rospy.ServiceException as e:
-        print("Service call failed: %s"%e)
+        print("exception")
         return False
 
 if __name__ == "__main__":
     rospy.init_node("drone_motion_client")
-    print("Drone Client")
-    if(moveDrone()):
-        print("Objected Accomplished")
-    else:
-        print("Objective Failed")
+    moveDrone()
+    # if(moveDrone()):
+    #     print("Objected Accomplished")
+    # else:
+    #     print("Objective Failed")
